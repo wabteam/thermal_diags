@@ -1,0 +1,13 @@
+&thermal_diags_nml
+    thetao_fi   =   "/public/nfs/9/observation/WOA2009/temperature_monthly_1deg.nc" 
+    so_fi       =   "/public/nfs/9/observation/WOA2009/salinity_monthly_1deg.nc" 
+    thetao_name =   "t_an"
+    so_name     =   "s_an"
+    lon_name    =   "lon"
+    lat_name    =   "lat"
+    lev_name    =   "depth"
+    time_name   =   "time"
+    if_lev_full_need    =  .false.
+    if_273	=   .false.
+    output_title=   "WOA2009_"
+/

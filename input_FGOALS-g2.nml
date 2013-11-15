@@ -1,0 +1,13 @@
+&thermal_diags_nml
+    thetao_fi   =   "/public/nfs/9/hwy/indian_ocean_dipole_analysis/data/mod/thetao/thetao_Omon_FGOALS-g2_historical_r1i1p1_185001-200512.nc"
+    so_fi       =   "/public/nfs/9/hwy/indian_ocean_dipole_analysis/data/mod/so/so_Omon_FGOALS-g2_historical_r1i1p1_185001-200512.nc"
+    thetao_name =   "thetao"
+    so_name     =   "so"
+    lon_name    =   "lon"
+    lat_name    =   "lat"
+    lev_name    =   "lev"
+    time_name   =   "time"
+    if_lev_full_need    =  .true.
+    if_273	=   .true.
+    output_title=   "FGOALS-g2_1850-2005_"
+/
