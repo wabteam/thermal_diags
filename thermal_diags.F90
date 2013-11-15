@@ -61,7 +61,7 @@ program thermal_diags
     integer,    parameter   ::  num_lon     =   360
     integer,    parameter   ::  num_lat     =   196
     integer,    parameter   ::  num_lev     =   30 
-    integer,    parameter   ::  num_time    =   1872
+    integer,    parameter   ::  num_time    =   12
     integer,    parameter   ::  imt         =   num_lon
     integer,    parameter   ::  jmt         =   num_lat
     integer,    parameter   ::  km          =   num_lev
@@ -311,10 +311,10 @@ program thermal_diags
                 HC1000(i,j,t) = miss
             else
                 do k = 1, min(10,nit(i,j))
-                    HC100(i,j,t) = HC100(i,j,t)+density(i,j,k)*(thetao(i,j,k)-ref_273)*dz(k)*3850.0d0
+                    HC100(i,j,t) = HC100(i,j,t)+pdensity(i,j,k)*(thetao(i,j,k)-ref_273)*dz(k)*3850.0d0
                 end do
                 do k = 1, min(15,nit(i,j))
-                    HC150(i,j,t) = HC150(i,j,t)+density(i,j,k)*(thetao(i,j,k)-ref_273)*dz(k)*3850.0d0
+                    HC150(i,j,t) = HC150(i,j,t)+pdensity(i,j,k)*(thetao(i,j,k)-ref_273)*dz(k)*3850.0d0
                 end do
                 do k = 1, min(lev_250,nit(i,j))
                     if (k == lev_250) then
@@ -322,7 +322,7 @@ program thermal_diags
                     else
                         HC_depth = dz(k)
                     end if
-                    HC250(i,j,t) = HC250(i,j,t)+density(i,j,k)*(thetao(i,j,k)-ref_273)*HC_depth*3850.0d0
+                    HC250(i,j,t) = HC250(i,j,t)+pdensity(i,j,k)*(thetao(i,j,k)-ref_273)*HC_depth*3850.0d0
                 end do
                 do k = 1, min(lev_500,nit(i,j))
                     if (k == lev_500) then
@@ -330,7 +330,7 @@ program thermal_diags
                     else
                         HC_depth = dz(k)
                     end if
-                    HC500(i,j,t) = HC500(i,j,t)+density(i,j,k)*(thetao(i,j,k)-ref_273)*HC_depth*3850.0d0
+                    HC500(i,j,t) = HC500(i,j,t)+pdensity(i,j,k)*(thetao(i,j,k)-ref_273)*HC_depth*3850.0d0
                 end do
                 do k = 1, min(lev_700,nit(i,j))
                     if (k == lev_700) then
@@ -338,7 +338,7 @@ program thermal_diags
                     else
                         HC_depth = dz(k)
                     end if
-                    HC700(i,j,t) = HC700(i,j,t)+density(i,j,k)*(thetao(i,j,k)-ref_273)*HC_depth*3850.0d0
+                    HC700(i,j,t) = HC700(i,j,t)+pdensity(i,j,k)*(thetao(i,j,k)-ref_273)*HC_depth*3850.0d0
                 end do
                 do k = 1, min(lev_1000,nit(i,j))
                     if (k == lev_1000) then
@@ -346,7 +346,7 @@ program thermal_diags
                     else
                         HC_depth = dz(k)
                     end if
-                    HC1000(i,j,t) = HC1000(i,j,t)+density(i,j,k)*(thetao(i,j,k)-ref_273)*HC_depth*3850.0d0
+                    HC1000(i,j,t) = HC1000(i,j,t)+pdensity(i,j,k)*(thetao(i,j,k)-ref_273)*HC_depth*3850.0d0
                 end do
             end if
         end do
